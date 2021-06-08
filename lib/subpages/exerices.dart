@@ -62,15 +62,18 @@ class _ExercisesListState extends State<ExercisesList> {
 void _settingModalBottomSheet(context) {
   showModalBottomSheet(
       context: context,
+      isScrollControlled: true,
       builder: (BuildContext bc) {
         return Container(
           child: new Wrap(
             children: <Widget>[
-              new BottomSheetWithPageView(),
-              new ListTile(
-                leading: new Icon(Icons.videocam),
-                title: new Text('Video'),
-                onTap: () => {},
+              Expanded(child: new BottomSheetWithPageView()),
+              Expanded(
+                child: new ListTile(
+                  leading: new Icon(Icons.videocam),
+                  title: new Text(
+                      'What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesettingindustry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type '),
+                ),
               ),
             ],
           ),
