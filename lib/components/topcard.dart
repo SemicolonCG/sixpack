@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-class TrainingTopCard extends StatefulWidget {
-  const TrainingTopCard({Key? key}) : super(key: key);
+class TopCard extends StatefulWidget {
+  const TopCard({Key? key}) : super(key: key);
 
   @override
-  _TrainingTopCardState createState() => _TrainingTopCardState();
+  _TopCardState createState() => _TopCardState();
 }
 
-class _TrainingTopCardState extends State<TrainingTopCard> {
+class _TopCardState extends State<TopCard> {
   @override
   Widget build(BuildContext context) {
-    return Card();
+    return Card(
+      child: Text('im top card'),
+    );
   }
 }
