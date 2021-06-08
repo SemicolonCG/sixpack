@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sixpack/components/topcard.dart';
+import 'package:sixpack/subpages/bottomsheet.dart';
 
 class ExercisesList extends StatefulWidget {
   const ExercisesList({Key? key}) : super(key: key);
@@ -32,7 +33,6 @@ class _ExercisesListState extends State<ExercisesList> {
     Icons.directions_transit,
     Icons.directions_walk
   ];
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -66,12 +66,7 @@ void _settingModalBottomSheet(context) {
         return Container(
           child: new Wrap(
             children: <Widget>[
-              new PageView(
-                children: [
-                  Text('data'),
-                  Text('data'),
-                ],
-              ),
+              new BottomSheetWithPageView(),
               new ListTile(
                 leading: new Icon(Icons.videocam),
                 title: new Text('Video'),
