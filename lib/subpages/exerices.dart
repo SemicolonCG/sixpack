@@ -48,7 +48,11 @@ class _ExercisesListState extends State<ExercisesList> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TopCard(),
+        TopCard(
+          mainTitle: 'Lose belly Fat',
+          subTitle: 'beginer',
+          imgSrc: 'assets/images/abs1.jpg',
+        ),
         Expanded(
           child: ListView.builder(
             itemCount: titles.length,
