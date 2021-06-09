@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sixpack/components/bottom_sheet_content.dart';
 import 'package:sixpack/components/topcard.dart';
-import 'package:sixpack/subpages/bottomsheet.dart';
 
 class ExercisesList extends StatefulWidget {
   const ExercisesList({Key? key}) : super(key: key);
@@ -33,6 +33,17 @@ class _ExercisesListState extends State<ExercisesList> {
     Icons.directions_transit,
     Icons.directions_walk
   ];
+
+  PageController _pageController = PageController(
+    initialPage: 0,
+  );
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -47,7 +58,7 @@ class _ExercisesListState extends State<ExercisesList> {
                   leading: Icon(icons[index]),
                   title: Text(titles[index]),
                   onTap: () {
-                    _settingModalBottomSheet(context);
+                    _settingModalBottomSheet(context, _pageController);
                   },
                 ),
               );
@@ -59,23 +70,21 @@ class _ExercisesListState extends State<ExercisesList> {
   }
 }
 
-void _settingModalBottomSheet(context) {
+void _settingModalBottomSheet(context, pageController) {
   showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       builder: (BuildContext bc) {
         return Container(
-          child: new Wrap(
-            children: <Widget>[
-              Expanded(child: new BottomSheetWithPageView()),
-              Expanded(
-                child: new ListTile(
-                  leading: new Icon(Icons.videocam),
-                  title: new Text(
-                      'What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesettingindustry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type '),
-                ),
-              ),
-            ],
+          child: new PageView.builder(
+            controller: pageController,
+            itemCount: 17,
+            itemBuilder: (context, index) {
+              return BottomSheetContent(
+                context: context,
+                index: index,
+              );
+            },
           ),
         );
       });

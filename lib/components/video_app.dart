@@ -3,8 +3,18 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
+class VideoPlayerApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Video Player Demo',
+      home: VideoPlayerScreen(),
+    );
+  }
+}
+
 class VideoPlayerScreen extends StatefulWidget {
-  //VideoPlayerScreen({Key key}) : super(key: key);
+  VideoPlayerScreen({Key? key}) : super(key: key);
 
   @override
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
@@ -43,7 +53,9 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      // appBar: AppBar(
+      //   title: Text('Butterfly Video'),
+      // ),
       // Use a FutureBuilder to display a loading spinner while waiting for the
       // VideoPlayerController to finish initializing.
       body: FutureBuilder(
@@ -55,7 +67,6 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
             return AspectRatio(
               aspectRatio: _controller.value.aspectRatio,
               // Use the VideoPlayer widget to display the video.
-
               child: VideoPlayer(_controller),
             );
           } else {
@@ -83,7 +94,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
         child: Icon(
           _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
