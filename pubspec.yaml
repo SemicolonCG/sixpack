@@ -31,11 +31,10 @@ dependencies:
   video_player: ^2.1.5
   syncfusion_flutter_charts: ^19.1.67
   table_calendar: ^3.0.0
-  shared_preferences: ^2.0.6
   page_view_indicators: ^2.0.0
- 
   
-   
+  
+ 
   
   
 
