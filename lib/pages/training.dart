@@ -45,8 +45,8 @@ class _TrainingState extends State<Training> {
 
 List _pages = [
   ABSPages(
-    mainTitle: 'උදර මේදය දහනය',
-    subTitle: 'මූලික අදියර',
+    mainTitle: '',
+    subTitle: '',
     imgSrc: 'assets/images/abs1.jpg',
   ),
   ABSPages(

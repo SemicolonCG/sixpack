@@ -23,7 +23,7 @@ class _BottomNavState extends State<BottomNav> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.deepPurpleAccent,
         unselectedItemColor: Colors.black.withOpacity(.60),
         selectedFontSize: 14,
         currentIndex: _selectIndex,
@@ -35,15 +35,15 @@ class _BottomNavState extends State<BottomNav> {
         },
         items: [
           BottomNavigationBarItem(
-            label: 'පුහුණුවීම්',
+            label: 'Training',
             icon: Icon(Icons.sports),
           ),
           BottomNavigationBarItem(
-            label: 'වාර්තා',
+            label: 'Reports',
             icon: Icon(Icons.bar_chart),
           ),
           BottomNavigationBarItem(
-            label: 'මං',
+            label: 'Me',
             icon: Icon(Icons.person),
           ),
         ],

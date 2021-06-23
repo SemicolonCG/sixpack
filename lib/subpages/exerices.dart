@@ -3,7 +3,19 @@ import 'package:sixpack/components/bottom_sheet_content.dart';
 import 'package:sixpack/components/topcard.dart';
 
 class ExercisesList extends StatefulWidget {
-  const ExercisesList({Key? key}) : super(key: key);
+  final String mainTitle;
+  final String days;
+
+  final String subTitle;
+  final String imgSrc;
+
+  const ExercisesList(
+      {Key? key,
+      required this.mainTitle,
+      required this.subTitle,
+      required this.days,
+      required this.imgSrc})
+      : super(key: key);
 
   @override
   _ExercisesListState createState() => _ExercisesListState();
@@ -48,10 +60,8 @@ class _ExercisesListState extends State<ExercisesList> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TopCard(
-          mainTitle: 'Lose belly Fat',
-          subTitle: 'beginer',
-          imgSrc: 'assets/images/abs1.jpg',
+        Card(
+          child: Image(image: AssetImage(widget.imgSrc)),
         ),
         Expanded(
           child: ListView.builder(

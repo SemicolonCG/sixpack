@@ -27,12 +27,15 @@ class _ABSPagesState extends State<ABSPages> {
     return Container(
       child: Column(
         children: [
-          TopCard(
-            mainTitle: widget.mainTitle,
-            subTitle: widget.subTitle,
-            imgSrc: widget.imgSrc,
+          Card(
+            child: Image(image: AssetImage(widget.imgSrc)),
           ),
-          Expanded(child: ScheduleTasks(items: items)),
+          Expanded(
+            child: ScheduleTasks(
+              days: items,
+              imgSrc: widget.imgSrc,
+            ),
+          ),
         ],
       ),
     );
